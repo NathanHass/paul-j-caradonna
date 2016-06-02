@@ -1,0 +1,12 @@
+---
+title: Paul J CaraDonna
+---
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+<ol class="pub__list">
+  {% for pub in data.publications %}
+    {% include "components/pub-tease.twig" %}
+  {% endfor %}
+</ol>
+{% endblock %}

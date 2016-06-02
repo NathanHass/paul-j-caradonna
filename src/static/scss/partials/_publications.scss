@@ -1,0 +1,22 @@
+.pub {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.pub__item {
+  display: inline;
+}
+
+.pub__contrib-list {
+  display: inline;
+  list-style: none;
+  padding: 0;
+}
+
+.pub__contrib-item {
+  display: inline;
+}
+
+.pub__contrib-item--paul {
+  font-weight: bold;
+}

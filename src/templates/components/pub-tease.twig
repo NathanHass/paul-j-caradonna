@@ -1,0 +1,30 @@
+<li class="pub__list__item">
+  <ul class="pub">
+
+    {% if pub.contributors %}
+      <li class="pub__item">
+        <ul class="pub__contrib-list">
+          {% for contrib in pub.contributors %}
+            <li class="pub__contrib-item{% if contrib.is_featured %} pub__contrib-item--paul{% endif %}"> {{contrib.name}}</li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
+
+    {% if pub.date %}
+      <li class="pub__date pub__item">{{pub.date}}.</li>
+    {% endif %}
+
+    {% if pub.description %}
+      <li class="pub__desc pub__item">{{pub.description}}.</li>
+    {% endif %}
+
+    {% if pub.publication %}
+      <li class="pub__info pub__item"> <em class="pub__info__name">{{pub.publication.name}}.</em><span class="pub__info__issue">{{pub.publication.issue}}.</span></li>
+    {% endif %}
+
+    {% if pub.notes %}
+      <li class="pub__notes pub__item">{{pub.notes}}.</li>
+    {% endif %}
+  </ul>
+</li>

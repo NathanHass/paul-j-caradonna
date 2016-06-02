@@ -1,0 +1,150 @@
+[
+  {
+    "contributors": [
+      {
+        "name": "CaraDonna, P. J.",
+        "is_featured": true
+      },
+      {
+        "name": "J.A. Bain*"
+      }
+    ],
+    "date": "2016",
+    "description": "Frost sensitivity of leaves and flowers of subalpine plants is related to tissue type and phenology",
+    "publication": {
+      "name": "Journal of Ecology",
+      "issue": "104: 55–64"
+    },
+    "notes": "*undergraduate co-author"
+  },
+  {
+    "contributors": [
+      {
+        "name": "CaraDonna, P. J.",
+        "is_featured": true
+      },
+      {
+        "name": "D.W. Inouye"
+      }
+    ],
+    "date": "2015",
+    "description": "Phenological responses to climate change do not exhibit phylogenetic signal in a subalpine plant community",
+    "publication": {
+      "name": "Ecology",
+      "issue": "96: 355–361"
+    }
+  },
+  {
+    "contributors": [
+      {
+        "name": "Rafferty, N.E."
+      },
+      {
+        "name": "P. J. CaraDonna",
+        "is_featured": true
+      },
+      {
+        "name": "J.L. Bronstein"
+      }
+    ],
+    "date": "2015",
+    "description": "Phenological shifts and the fate of mutualism",
+    "publication": {
+      "name": "Oikos",
+      "issue": "124: 14–21"
+    }
+  },
+  {
+    "contributors": [
+      {
+        "name": "CaraDonna, P. J.*",
+        "is_featured": true
+      },
+      {
+        "name": "A.M. Iler*"
+      },
+      {
+        "name": "D.W. Inouye"
+      }
+    ],
+    "date": "2014",
+    "description": "Shifts in flowering phenology reshape a subalpine plant community",
+    "publication": {
+      "name": "Proceedings of the National Academy of Sciences, USA",
+      "issue": "111: 1619–1621"
+    },
+    "notes": "*equal author contributions"
+  },
+  {
+    "contributors": [
+      {
+        "name": "Rafferty, N.E."
+      },
+      {
+        "name": "P. J. CaraDonna",
+        "is_featured": true
+      },
+      {
+        "name": "L.A. Burkle"
+      },
+      {
+        "name": "A.M. Iler"
+      },
+      {
+        "name": "J.L. Bronstein"
+      }
+    ],
+    "date": "2013",
+    "description": "Phenological overlap of interacting species in a changing climate: an assessment of available approaches",
+    "publication": {
+      "name": "Ecology & Evolution",
+      "issue": "3: 3183-3193"
+    }
+  },
+  {
+    "contributors": [
+      {
+        "name": "McKinney, A.M"
+      },
+      {
+        "name": "P. J. CaraDonna",
+        "is_featured": true
+      },
+      {
+        "name": "D.W. Inouye"
+      },
+      {
+        "name": "W.A. Barr"
+      },
+      {
+        "name": "C.D. Bertelsen"
+      },
+      {
+        "name": "N.M. Waser"
+      }
+    ],
+    "date": "2012",
+    "description": "Asynchronous changes in phenology of migrating Broad-tailed Hummingbirds and their early-season nectar resources",
+    "publication": {
+      "name": "Ecology",
+      "issue": "93: 1987-1993"
+    }
+  },
+  {
+    "contributors": [
+      {
+        "name": "CaraDonna, P. J.",
+        "is_featured": true
+      },
+      {
+        "name": "J. D. Ackerman"
+      }
+    ],
+    "date": "2012",
+    "description": "Reproductive assurance for a rewardless epiphytic orchid in Puerto Rico, Pleurothallis ruscifolia (Orchidaceae, Pleurothallidinae)",
+    "publication": {
+      "name": "The Caribbean Journal of Science",
+      "issue": "46 (2-3): 249-257"
+    }
+  }
+]
