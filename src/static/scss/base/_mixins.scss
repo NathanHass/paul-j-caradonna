@@ -1,0 +1,54 @@
+@mixin grammar-list($margin: -4px) {
+  &:after {
+    content: ',';
+    display: inline;
+    margin-left: $margin;
+  }
+
+  &:nth-last-child(2) {
+    &:after {
+      content: ', and';
+      font-weight: normal;
+      margin-left: $margin;
+    }
+
+    &:first-of-type {
+      &:after {
+        content: ' and';
+        font-weight: normal;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &:last-child {
+    &:after {
+      content: '.';
+    }
+  }
+}
+
+@mixin but-last($margin, $padding, $border) {
+
+  @if $margin {
+    margin-bottom: $margin;
+  }
+  @if $padding {
+    padding-bottom: $padding;
+  }
+  @if $border {
+    border-bottom: $border;
+  }
+
+  &:last-child {
+    @if $margin {
+      margin-bottom: 0;
+    }
+    @if $padding {
+      padding-bottom: 0;
+    }
+    @if $border {
+      border-bottom: 0;
+    }
+  }
+}

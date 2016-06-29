@@ -1,10 +1,188 @@
+$clr-dark:    #444444;
+$clr-green:   #79B595;
+$clr-blue:    #005879;
+$clr-purple:  #3F61EA;
+$clr-red:     #FC644B;
+$clr-reverse: #F8F8F3;
+
+
+//            name       spot            reverse
+$clr-themes:  dark       $clr-dark        $clr-reverse,
+              green      $clr-green       $clr-reverse,
+              blue       $clr-blue        #F6FBFD,
+              purple     $clr-purple      $clr-reverse,
+              red        $clr-red         $clr-reverse;
+
+
+@mixin link($clr: $clr-spot) {
+  box-shadow: 0 -.083em 0 rgba($clr, .3) inset;
+  transition: box-shadow .2s $timing;
+  font-style: italic;
+  padding: 0 .083em;
+  margin: 0 -.083em;
+  box-decoration-break: clone;
+
+  &:hover {
+    box-shadow: 0 -.25em 0 rgba($clr, .3) inset;
+  }
+}
+
+@mixin theme($property: 'background-color', $clr: spot) {
+  @each $item in $clr-themes {
+    $theme-name:    nth($item, 1);
+    $theme-spot:    nth($item, 2);
+    $theme-reverse: nth($item, 3);
+    @if $property == link {
+      .page-theme--#{$theme-name} & {
+        @if $clr == spot {
+          @include link( $theme-spot);
+        } @else {
+          @include link( nth($item, 3));
+        }
+      }
+    } @elseif nth($property, 1) == border
+      or nth($property, 1) == 'border-top'
+      or nth($property, 1) == 'border-left'
+      or nth($property, 1) == 'border-right'
+      or nth($property, 1) == 'border-bottom'  {
+      $border-type: nth($property, 1);
+      $border-width: nth($property, 2);
+      .page-theme--#{$theme-name} & {
+        @if $clr == spot {
+          #{$border-type}: $border-width solid $theme-spot;
+        } @else {
+          #{$border-type}: $border-width solid $theme-reverse;
+        }
+      }
+    } @else {
+      .page-theme--#{$theme-name} & {
+        @if $clr == spot {
+          #{$property}: $theme-spot;
+        } @else {
+          #{$property}: $theme-reverse;
+        }
+      }
+    }
+  }
+}
+
+
+.page__section--intro {
+  display: flex;
+  position: relative;
+  @include theme(border-top 5px, spot);
+  @include theme(color, spot);
+  @include mq($bp--phablet) {
+    min-height: calc(100vh);
+    @include theme(border 5px, spot);
+  }
+
+  @include mq($bp--tablet) {
+    @include theme(border 10px, spot);
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    @include absolute(0);
+    // background-image: url('https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/13150804_777593069041506_708585862_n.jpg?ig_cache_key=MTI0NzY3NzczNTE0MTY3MzQwNw%3D%3D.2');
+    background-position: 50% 50%;
+    background-size: cover;
+    filter: grayscale(1);
+    opacity: .1;
+  }
+
+  .page__width {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.page__width {
+  width: 100%;
+  max-width: 42.15em;
+  margin: 0 auto;
+}
+
+.intro__h {
+  @include font($serif, 1.84em);
+  margin-bottom: 3.5em;
+  display: inline-block;
+  position: relative;
+  line-height: 1.1;
+  @include mq($bp--phablet) {
+    @include font($size: 2.74em);
+  }
+  a {
+    // transition: all .2s $timing;
+    &:hover {
+      opacity: .6;
+    }
+  }
+}
+
+.intro__text {
+  max-width: 39.47em;
+  @include mq($bp--phablet) {
+    @include font($serif, 1.26em);
+  }
+  .page__section--intro &:first-of-type {
+    text-indent: -.5em;
+  }
+
+  a {
+    @include theme(link);
+  }
+}
+
+.page__section {
+  @include theme(color, spot);
+  @include theme(background-color, reverse);
+  &:nth-child(even) {
+    @include theme(color, reverse);
+    @include theme(background-color, spot);
+  }
+
+  padding: 40px 20px;
+  @include mq($bp--phone) {
+    padding: 40px;
+  }
+  @include mq($bp--tablet) {
+    padding: 5.2em;
+  }
+}
+
+.page__section__h {
+  @include font($serif, 1.3em);
+  margin-bottom: 1.3em;
+  @include mq($bp--phablet) {
+    @include font($size: 2.21em);
+  }
+
+  .page__section--pub & {
+    margin-bottom: 0.14em;
+  }
+}
+
 .pub {
   list-style: none;
-  margin-bottom: 20px;
 }
 
 .pub__item {
   display: inline;
+}
+
+.pub__notes {
+  display: block;
+  text-transform: uppercase;
+  font-size: .6em;
+  letter-spacing: .05em;
+  font-weight: 700;
+  margin-top: 1.2em;
+  text-indent: -.5em;
 }
 
 .pub__contrib-list {
@@ -15,8 +193,120 @@
 
 .pub__contrib-item {
   display: inline;
+  @include grammar-list(0);
 }
 
 .pub__contrib-item--paul {
   font-weight: bold;
+}
+
+.pub__list {
+  margin: 0 auto;
+  line-height: 1.65;
+  padding: 1.58em 0 0;
+  counter-reset: ind-counter 0;
+  position: relative;
+  list-style: none;
+}
+
+
+.pub__list__item {
+  counter-increment: ind-counter 1;
+  padding-left: 3.2em;
+  @include mq($bp--phablet) {
+    padding-left: 5.2em;
+    @include font($serif, 1.1em);
+  }
+
+  &:before {
+    @include absolute(n n n 0);
+    @include font($serif, 1.8em, 400);
+    content: counter(ind-counter, decimal-leading-zero);
+    text-rendering: optimizeLegibility;
+    padding-top: .13em;
+    line-height: 1;
+    visibility: visible;
+
+    @include mq($bp--phablet) {
+      @include font($size: 2em);
+    }
+  }
+
+  @include but-last(1.9em, 1.9em, 1px solid);
+  .page__section:nth-child(even) & {
+    @include but-last(1.9em, 1.9em, 1px solid);
+  }
+}
+
+.contact__list {
+  @include font($serif, .9em);
+  @include mq($bp--phablet) {
+    @include font($size: 1em);
+  }
+}
+
+.contact__list__label {
+  @include font($serif, .6em, 700);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.4em;
+  @include mq($bp--phablet) {
+    line-height: 2.7em;
+    width: 6.14em;
+    float: left;
+  }
+}
+
+.contact__list__item {
+  a {
+    @include theme(link, reverse);
+  }
+}
+
+.contact__cv {
+  @include font($serif, .68em, 700);
+  width: 8.4em;
+  @include theme(border 2px, reverse);
+  float: right;
+  padding: .77em;
+  &:hover {
+    @include theme(color, spot);
+    @include theme(background-color, reverse);
+  }
+}
+
+.contact__cv__title {
+  display: block;
+  letter-spacing: .15em;
+  margin-bottom: .61em;
+}
+
+.contact__cv__lines {
+  display: block;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  padding: 1em 0;
+  margin-bottom: .5em;
+
+  &:before {
+    display: block;
+    content: '';
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    padding: 1em 0 0;
+    margin-bottom: 1em;
+  }
+
+  &:after {
+    display: block;
+    content: '';
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    padding: 1em 0 0;
+  }
+}
+
+.page__section__h {
+  box-shadow: 0 -2px inset;
+  padding-bottom: .666em;
 }

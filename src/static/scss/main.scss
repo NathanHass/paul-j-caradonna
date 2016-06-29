@@ -2,5 +2,13 @@
 // Import Upbase
 @import "upbase/scss/upbase";
 
+// Base styles
+@import "base/variables";
+@import "base/type";
+@import "base/mixins";
+@import "base/base-global";
+@import "base/base-typography";
+
+
 // Project styles go here
 @import "partials/publications";

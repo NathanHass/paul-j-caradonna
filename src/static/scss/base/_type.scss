@@ -1,0 +1,24 @@
+@mixin font(
+  $family: false,
+  $size: false,
+  $weight: false,
+  $style: false
+  ) {
+
+  // Set font-family
+  @if $family {
+      font-family: $family;
+  }
+  // Set font-size
+  @if $size {
+    font-size: $size;
+  }
+  // Set font-weight
+  @if $weight {
+    font-weight: $weight;
+  }
+  // Set font-style
+  @if $style {
+    font-style: $style;
+  }
+} // font mixin

@@ -2,26 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Paul CaraDonna is a community ecologist based at the University of Arizona and the Rocky Mountain Biological Laboratory in Colorado. He is currently an NSF GROW Fellow at the Center for Macroecology, Evolution and Climate at the University of Copenhagen. He studies the structure and function of ecological communities and species interactions, mostly with plants and pollinators.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ current_page.title }}</title>
+    <meta name="keywords" content="Paul, CaraDonna, Paul CaraDonna, community, ecologist, University of Arizona, Rocky Mountain Biological Laboratory, RMBL, NSF GROW, University of Copenhagen, pollinators, plants">
+    <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
 
     {% block styles %}
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
     {% endblock %}
-    
+
     <script type="text/javascript" src="/static/js/modernizr.js"></script>
-    
+
   </head>
   <body>
 
-  {% block content %}{% endblock %}
+  <div class="body-content {{current_page.classes}}">
+    {% block content %}{% endblock %}
 
-  {% block scripts %}
-  
+    {% block scripts %}
+  </div>
+
   <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
-  
+
 
   <!-- build:js /static/js/scripts.js -->
   <script type="text/javascript" src="/static/js/main.js"></script>

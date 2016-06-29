@@ -1,12 +1,49 @@
 ---
 title: Paul J CaraDonna
+classes: page-theme--dark
 ---
 {% extends "layouts/base.twig" %}
 
 {% block content %}
-<ol class="pub__list">
-  {% for pub in data.publications %}
-    {% include "components/pub-tease.twig" %}
-  {% endfor %}
-</ol>
+<div class="page__section page__section--intro">
+  <div class="page__width">
+    <h1 class="intro__h"><span>Dr. Paul J. CaraDonna</span><a href="https://www.instagram.com/pcaradonna/" target="_blank">*</a></h1>
+    <p class="intro__text">*is a community ecologist based at the <a href="http://eeb.arizona.edu/grads" target="_blank">University of Arizona</a> and <a href="http://www.rmbl.org/" target="_blank">the Rocky Mountain Biological Laboratory</a> in Colorado. He is currently an NSF GROW Fellow at the <a href="http://macroecology.ku.dk/" target="_blank">Center for Macroecology, Evolution and Climate</a> at the University of Copenhagen. He studies the structure and function of ecological communities and species interactions, mostly with plants and pollinators.</p>
+  </div>
+</div>
+<div class="page__section page__section--research">
+  <div class="page__width">
+    <h1 class="page__section__h">Research</h1>
+    <p class="intro__text">My aims to understand the structure and function of ecological communities and species interactions, mostly with plants and pollinators. In doing so, I explore the interplay among biotic context, environmental variation, and phenology. I ask how these factors influence plant and animal populations, their interactions, and community structure from a basic ecological perspective and under rapid climate change scenarios.</p>
+    <p class="intro__text">I address these questions using a variety of approaches including: observational field studies that use existing natural variation, field and laboratory experiments that build upon knowledge of this variation, and analytical tools like null model simulations, community phylogenetics, and network analyses.</p>
+  </div>
+</div>
+<div class="page__section page__section--pub">
+  <div class="page__width">
+    <h1 class="page__section__h">Publications</h1>
+    <ol class="pub__list">
+      {% for pub in data.publications %}
+        {% include "components/pub-tease.twig" %}
+      {% endfor %}
+    </ol>
+  </div>
+</div>
+<div class="page__section page__section--contact">
+  <div class="page__width">
+    <h1 class="page__section__h">Get in Touch</h1>
+    <a href="/static/img/Paul_CaraDonna_CV.pdf" class="contact__cv">
+      <span class="contact__cv__title">CV</span>
+      <span class="contact__cv__lines"></span>
+    </a>
+
+    <dl class="contact__list">
+      <dt class="contact__list__label">Email:</dt>
+      <dd class="contact__list__item"><a href="mailto:pcaradonna@gmail.com">pcaradonna@gmail.com</a></dd>
+      <dt class="contact__list__label">USA:</dt>
+      <dd class="contact__list__item"><a href="tel:1.339.222.0006">+1.339.222.0006</a></dd>
+      <dt class="contact__list__label">DK:</dt>
+      <dd class="contact__list__item"><a href="tel:45.28.43.47.40">+45.28.43.47.40</a></dd>
+    </dl>
+  </div>
+</div>
 {% endblock %}
